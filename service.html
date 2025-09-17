@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan Kami - ManikManik</title>
-    <link rel="shortcut icon" href="images/manikpendek.jpg" type="image/jpg">
+    <title>ManikManik - Murah Berkualitas & Bergaransi | Jagonya Hardware & Software</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="shortcut icon" href="images/manikpendek.jpg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
-        }
+        } 
         .neon-text { text-shadow: none; }
         .neon-border { box-shadow: none; }
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(252, 226, 132, 0.25);
         }
-        .accordion-header {
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .floating {
+            animation: floating 3s ease-in-out infinite;
         }
-        .accordion-header:hover {
-            background-color: rgba(0, 255, 0, 0.1);
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
         .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-        }
-        .active .accordion-content {
-            max-height: 500px;
         }
         /* Custom gold utilities */
         .text-gold { color: #DBB868; }
@@ -42,6 +44,54 @@
         .hover\:text-gold:hover { color: #DBB868; }
         .hover\:bg-gold:hover { background-color: #DBB868; }
         .focus\:ring-gold:focus { box-shadow: 0 0 0 2px #DBB868; }
+        /* Swiper custom styles */
+        .swiper-pagination-bullet {
+            background: #DBB868 !important;
+            opacity: 0.5;
+            width: 12px;
+            height: 12px;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #DBB868 !important;
+            transform: scale(1.2);
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #DBB868 !important;
+            width: 56px !important;
+            height: 56px !important;
+            background: rgba(17, 24, 39, 0.9);
+            border: 2px solid #DBB868;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #DBB868 !important;
+            color: #111827 !important;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(219, 184, 104, 0.5);
+        }
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 24px !important;
+            font-weight: bold;
+        }
+        .swiper-button-next {
+            right: 10px !important;
+        }
+        .swiper-button-prev {
+            left: 10px !important;
+        }
+        .swiper-slide {
+            transition: all 0.3s ease;
+        }
+        .swiper-slide:hover .carousel-overlay {
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -56,15 +106,15 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-gray-300 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="service.html" class="text-gold px-3 py-2 rounded-md text-sm font-medium">Layanan</a>
-                        <a href="laptop.html" class="text-gray-300 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Laptop</a>
-                        <a href="about.html" class="text-gray-300 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Tentang</a>
-                        <a href="https://wa.me/6282245535020" class="text-gray-300 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+                        <a href="index.html" class="text-gold px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="service.html" class="text-gray-500 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Layanan</a>
+                        <a href="laptop.html" class="text-gray-500 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Laptop</a>
+                        <a href="about.html" class="text-gray-500 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Tentang</a>
+                        <a href="https://wa.me/6282245535020" class="text-gray-500 hover:text-gold px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <i data-feather="menu"></i>
                     </button>
@@ -75,370 +125,273 @@
         <!-- Mobile menu -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
-                <a href="service.html" class="text-gold block px-3 py-2 rounded-md text-base font-medium">Layanan</a>
-                <a href="laptop.html" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Laptop</a>
-                <a href="about.html" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
-                <a href="https://wa.me/6282245535020" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+                <a href="index.html" class="text-gold block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="service.html" class="text-gray-500 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Layanan</a>
+                <a href="laptop.html" class="text-gray-500 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Laptop</a>
+                <a href="about.html" class="text-gray-500 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
+                <a href="https://wa.me/6282245535020" class="text-gray-500 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="relative pt-32 pb-20 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                    <span class="block">Layanan Profesional</span>
-                    <span class="block text-gold">Hardware & Software</span>
-                </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Solusi lengkap untuk kebutuhan komputer dan elektronik Anda. Cepat, terpercaya, dan terjangkau.
-                </p>
+    <div id="hero" class="relative pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div id="vanta-bg" class="w-full h-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                        <span class="block">manikmanikcom</span>
+                        <span class="block text-gold">Jagonya Laptop 2nd</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Jasa Perbaikan Hardware & Software <br>
+                        Cepat Rapih Dan Hemat
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="service.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-gold hover:bg-gold md:py-4 md:text-lg md:px-10 transition duration-500 transform hover:scale-105">Layanan Kami</a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="https://wa.me/6282245535020" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gold bg-gray-800 hover:bg-gray-700 md:py-4 md:text-lg md:px-10 transition duration-500 transform hover:scale-105">Chat WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                        <div class="relative block w-full bg-gray-800 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2" style="--tw-ring-color:#DBB868">
+                            <img class="w-full floating" src="images/herohome.jpg" alt="Computer repair">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Services Section -->
-    <div class="py-12 bg-gray-900">
+    <!-- Carousel Section -->
+    <div class="py-12 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="swiper carousel-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide" data-aos="fade-up">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 1" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Gaming Premium</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Performa tinggi untuk gaming dan editing dengan harga terjangkau.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 2" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Bisnis Elegan</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Desain tipis, baterai tahan lama untuk produktivitas sehari-hari.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 3" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Multimedia Canggih</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Layar jernih dan audio superior untuk hiburan maksimal.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 4" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Ultrabook Ringan</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Portabilitas maksimal dengan performa handal.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 5" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Desain Kreatif</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Cocok untuk desainer grafis dan konten kreator.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 6" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Performa Tinggi</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Prosesor cepat untuk multitasking berat.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 7" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Budget Friendly</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Harga terjangkau dengan kualitas terjamin.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="700">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 8" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">All-Purpose</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Serba guna untuk kerja dan hiburan.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="800">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="images/asus.jpg" alt="Laptop 9" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Pro Edition</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Didesain untuk profesional dengan kebutuhan tinggi.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-6"></div>
+                <!-- Navigation arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Preview -->
+    <div class="py-12 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
-                <h2 class="text-base text-gold font-semibold tracking-wide uppercase">Layanan Kami</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Jasa Perbaikan Ahli</p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">Kami menyediakan layanan servis dan perawatan berkualitas untuk semua perangkat Anda.</p>
+                <h2 class="text-base text-gold font-semibold tracking-wide uppercase">Layanan</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Apa yang Kami Tawarkan</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Solusi lengkap untuk kebutuhan teknologi Anda</p>
             </div>
 
             <div class="mt-10">
                 <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
                     <!-- Service 1 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up">
+                    <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                         <div class="p-6">
                             <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="cpu" class="h-6 w-6 text-gold"></i>
+                                <div class="flex-shrink-0 bg-gray-800 rounded-md p-3">
+                                    <i data-feather="cpu" class="h-6 w-6 text-yellow-500"></i>
                                 </div>
                                 <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Diagnosa & Perbaikan Hardware</h3>
+                                    <h3 class="text-lg leading-6 font-medium text-white">Perbaikan Hardware</h3>
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <p class="text-base text-gray-300">Diagnosa dan perbaikan komponen seperti motherboard, prosesor, RAM, dan power supply.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Mulai dari Rp</span>
+                                <p class="text-base text-gray-500">Diagnosa dan perbaikan komponen hardware seperti motherboard, GPU, dan PSU.</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                         <div class="p-6">
                             <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="hard-drive" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Pemulihan Data</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Jasa recovery data untuk HDD, SSD, dan RAID. Peluang berhasil tinggi.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="shield" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Hapus Virus & Malware</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Pembersihan virus & malware lengkap dengan optimasi sistem.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="download" class="h-6 w-6 text-gold"></i>
+                                <div class="flex-shrink-0 bg-gray-800 rounded-md p-3">
+                                    <i data-feather="download" class="h-6 w-6 text-yellow-500"></i>
                                 </div>
                                 <div class="ml-5">
                                     <h3 class="text-lg leading-6 font-medium text-white">Instalasi Software</h3>
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <p class="text-base text-gray-300">Instalasi OS, update driver, dan konfigurasi software untuk performa maksimal.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
+                                <p class="text-base text-gray-500">Instalasi OS, update driver, dan konfigurasi software untuk performa maksimal.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Service 5 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Service 3 -->
+                    <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                         <div class="p-6">
                             <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="trending-up" class="h-6 w-6 text-gold"></i>
+                                <div class="flex-shrink-0 bg-gray-800 rounded-md p-3">
+                                    <i data-feather="trending-up" class="h-6 w-6 text-yellow-500"></i>
                                 </div>
                                 <div class="ml-5">
                                     <h3 class="text-lg leading-6 font-medium text-white">Upgrade Sistem</h3>
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <p class="text-base text-gray-300">Upgrade hardware sesuai kebutuhan untuk meningkatkan performa.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 6 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="monitor" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Rakit PC Custom</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Rakit PC sesuai kebutuhan: gaming, konten, maupun kantor.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
+                                <p class="text-base text-gray-500">Upgrade hardware sesuai kebutuhan untuk meningkatkan performa dan umur perangkat.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Software Services Section -->
-    <div class="py-12 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-gold font-semibold tracking-wide uppercase">Layanan Software</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Solusi Software Terbaik</p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">Optimalkan perangkat Anda dengan layanan software profesional kami.</p>
-            </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                    <!-- Software Service 1 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="terminal" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Pembuatan Website</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Pembuatan website dengan tampilan modern dan responsif.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Software Service 2 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="code" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Desain Grafis</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Desain grafis untuk kebutuhan bisnis Anda.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Software Service 3 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="database" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Manajemen Database</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Setup, backup, dan pemeliharaan database untuk bisnis Anda.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Software Service 4 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="lock" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Keamanan Software</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Instalasi dan konfigurasi antivirus serta firewall untuk perlindungan maksimal.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Software Service 5 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="tool" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Perbaikan Software</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Perbaikan error sistem, crash aplikasi, dan masalah kompatibilitas.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Software Service 6 -->
-                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden service-card transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 bg-gray-700 rounded-md p-3">
-                                    <i data-feather="cloud" class="h-6 w-6 text-gold"></i>
-                                </div>
-                                <div class="ml-5">
-                                    <h3 class="text-lg leading-6 font-medium text-white">Integrasi Cloud</h3>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <p class="text-base text-gray-300">Konfigurasi dan integrasi layanan cloud seperti Google Drive atau OneDrive.</p>
-                            </div>
-                            <div class="mt-4">
-                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-700 text-gold">Harga terjangkau</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-10 text-center">
+                <a href="service.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gold hover:bg-gold transition duration-500 transform hover:scale-105">Lihat Semua Layanan<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
             </div>
         </div>
-    </div>
-
-    <!-- Additional Services -->
-    <div class="py-12 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-gold font-semibold tracking-wide uppercase">Layanan Lainnya</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">Solusi Teknologi Menyeluruh</p>
-            </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    <div class="flex items-start" data-aos="fade-up">
-                        <div class="flex-shrink-0 bg-gray-700 rounded-md p-2">
-                            <i data-feather="wifi" class="h-5 w-5 text-gold"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Setting Jaringan</h3>
-                            <p class="mt-1 text-base text-gray-300">Instalasi & troubleshooting jaringan rumah/kantor.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex-shrink-0 bg-gray-700 rounded-md p-2">
-                            <i data-feather="cloud" class="h-5 w-5 text-gold"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Pembuatan Sistem</h3>
-                            <p class="mt-1 text-base text-gray-300">Kustomisasi sistem untuk bisnis Anda.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex-shrink-0 bg-gray-700 rounded-md p-2">
-                            <i data-feather="smartphone" class="h-5 w-5 text-gold"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Perbaikan Mobile</h3>
-                            <p class="mt-1 text-base text-gray-300">Ganti layar dan perbaikan smartphone/tablet.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex-shrink-0 bg-gray-700 rounded-md p-2">
-                            <i data-feather="settings" class="h-5 w-5 text-gold"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-white">Perawatan Preventif</h3>
-                            <p class="mt-1 text-base text-gray-300">Pembersihan & perawatan rutin agar awet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="mt-10 text-center mb-5">
-        <p class="text-gray-300">Masih ada pertanyaan?</p>
-        <a href="https://wa.me/6282245535020" class="mt-4 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gold hover:bg-gold transition duration-300 transform hover:scale-105">Chat WhatsApp<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
     </div>
 
     <!-- CTA Section -->
-    <div class="bg-gray-800 mt-5">
+    <div class="bg-gray-800">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                <span class="block">Siap perbaiki perangkat Anda?</span>
-                <span class="block text-gold">Hubungi kami untuk konsultasi gratis.</span>
+                <span class="block">Siap atasi masalah perangkat Anda?</span>
+                <span class="block text-gold">Hubungi kami sekarang.</span>
             </h2>
             <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
                 <div class="inline-flex rounded-md shadow">
-                    <a href="https://wa.me/6282245535020" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gold hover:bg-gold transition duration-300 transform hover:scale-105">Chat WhatsApp<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+                    <a href="https://wa.me/6282245535020" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gold hover:bg-gold transition duration-500 transform hover:scale-105">Chat WhatsApp<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
                 </div>
             </div>
         </div>
@@ -453,7 +406,7 @@
                         <img src="images/blackone-removebg-preview.png" alt="ManikManik" class="w-60 h-15">
                     </div>
                     <div class="mt-4 flex space-x-6">
-                        <a href="https://www.facebook.com/marketplace/profile/100054820909857/?ref=permalink&tab=listings&mibextid=dXMIcH" target="_blank" class="text-gray-500 hover:text-gold">
+                        <a href="https://www.facebook.com/marketplace/profile/100054820909857/?ref=permalink&tab=listings&mibextid=dXMIcH" target="_blank" class="text-gray-500 hover:text-yellow-500">
                             <i data-feather="facebook"></i>
                         </a>
                     </div>
@@ -463,16 +416,16 @@
                         <div>
                             <h3 class="text-sm font-semibold text-gold tracking-wider uppercase">Layanan</h3>
                             <div class="mt-4 space-y-4">
-                                <a href="service.html" class="text-base text-gray-500 hover:text-gold">Laptop Second Ready</a>
-                                <a href="service.html" class="text-base text-gray-500 hover:text-gold">Perbaikan Hardware & Software</a>
-                                <a href="service.html" class="text-base text-gray-500 hover:text-gold">Pembuatan Website & Desain</a>
+                                <a href="service.html" class="text-base text-gray-500 hover:text-yellow-500">Laptop Second Ready</a>
+                                <a href="service.html" class="text-base text-gray-500 hover:text-yellow-500">Perbaikan Hardware & Software</a>
+                                <a href="service.html" class="text-base text-gray-500 hover:text-yellow-500">Pembuatan Website & Design</a>
                             </div>
                         </div>
                         <div class="mt-12 md:mt-0">
                             <h3 class="text-sm font-semibold text-gold tracking-wider uppercase">Perusahaan</h3>
                             <div class="mt-4 space-y-4">
-                                <a href="about.html" class="text-base text-gray-500 hover:text-gold">Tentang Kami</a>
-                                <a href="service.html" class="text-base text-gray-500 hover:text-gold block mt-2">Layanan Kami</a>
+                                <a href="about.html" class="text-base text-gray-500 hover:text-yellow-500">Tentang Kami</a>
+                                <a href="service.html" class="text-base text-gray-500 hover:text-yellow-500 block mt-2">Layanan Kami</a>
                             </div>
                         </div>
                     </div>
@@ -480,8 +433,8 @@
                         <div class="mt-12 md:mt-0">
                             <h3 class="text-sm font-semibold text-gold tracking-wider uppercase">Kontak</h3>
                             <div class="mt-4 space-y-4">
-                                <p class="text-base text-gray-500">Chat WhatsApp: <a class="text-gold hover:underline" href="https://wa.me/6282245535020">+62 822-4553-5020</a></p>
-                                <p class="text-base text-gray-500">Email: <a href="mailto:lotuscom9@gmail.com" class="text-gold hover:underline">lotuscom9@gmail.com</a></p>
+                                <p class="text-base text-gray-500">Chat WhatsApp: <a class="text-yellow-500 hover:underline" href="https://wa.me/6282245535020">+62 822-4553-5020</a></p>
+                                <p class="text-base text-gray-500">Email: <a href="mailto:lotuscom9@gmail.com" class="text-yellow-500 hover:underline">lotuscom9@gmail.com</a></p>
                             </div>
                         </div>
                     </div>
@@ -489,7 +442,7 @@
             </div>
             <div class="mt-12 border-t border-gray-800 pt-8">
                 <p class="text-base text-gray-500 text-center">
-                    &copy; 2025 ManikManik. All rights reserved.
+                    &copy; 2025 ManikManikComp. All rights reserved.
                 </p>
             </div>
         </div>
@@ -497,13 +450,31 @@
 
     <!-- Sticky Contact Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/6282245535020" class="flex items-center justify-center w-14 h-14 rounded-full bg-gold text-white shadow-lg hover:bg-gold transition duration-300 transform hover:scale-110">
+        <a href="https://wa.me/6282245535020" class="flex items-center justify-center w-14 h-14 rounded-full bg-gold text-white shadow-lg hover:bg-gold transition duration-500 transform hover:scale-110">
             <i data-feather="message-circle" class="w-6 h-6"></i>
         </a>
     </div>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
+        // Initialize Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xFCE284,
+            backgroundColor: 0x111827,
+            points: 10.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+
         // Mobile menu toggle
         document.querySelector('[aria-controls="mobile-menu"]').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -520,22 +491,39 @@
         // Initialize feather icons
         feather.replace();
 
-        // Accordion functionality
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                const isActive = item.classList.contains('active');
-                
-                // Close all items
-                document.querySelectorAll('.accordion-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('i').classList.remove('rotate-180');
-                });
-                
-                // Open current if it was closed
-                if (!isActive) {
-                    item.classList.add('active');
-                    header.querySelector('i').classList.add('rotate-180');
+        // Initialize Carousel Swiper
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselSwiper = new Swiper('.carousel-swiper', {
+                loop: true,
+                effect: 'slide',
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                lazy: {
+                    loadPrevNext: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
                 }
             });
         });

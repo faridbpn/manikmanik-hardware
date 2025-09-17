@@ -12,8 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;4 00;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
@@ -43,6 +44,39 @@
         .hover\:text-gold:hover { color: #DBB868; }
         .hover\:bg-gold:hover { background-color: #DBB868; }
         .focus\:ring-gold:focus { box-shadow: 0 0 0 2px #DBB868; }
+        /* Swiper custom styles */
+        .swiper-pagination-bullet {
+            background: #DBB868 !important;
+            opacity: 0.5;
+            width: 12px;
+            height: 12px;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #DBB868 !important;
+            transform: scale(1.2);
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #DBB868 !important;
+            width: 48px;
+            height: 48px;
+            background: rgba(17, 24, 39, 0.8);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #DBB868 !important;
+            color: #111827 !important;
+        }
+        .swiper-slide {
+            transition: all 0.3s ease;
+        }
+        .swiper-slide:hover .carousel-overlay {
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -119,6 +153,147 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="py-12 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="swiper carousel-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide" data-aos="fade-up">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+1" alt="Laptop 1" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Gaming Premium</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Performa tinggi untuk gaming dan editing dengan harga terjangkau.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+2" alt="Laptop 2" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Bisnis Elegan</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Desain tipis, baterai tahan lama untuk produktivitas sehari-hari.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+3" alt="Laptop 3" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Multimedia Canggih</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Layar jernih dan audio superior untuk hiburan maksimal.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="300">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+4" alt="Laptop 4" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Ultrabook Ringan</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Portabilitas maksimal dengan performa handal.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="400">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+5" alt="Laptop 5" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Desain Kreatif</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Cocok untuk desainer grafis dan konten kreator.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="500">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+6" alt="Laptop 6" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Performa Tinggi</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Prosesor cepat untuk multitasking berat.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="600">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+7" alt="Laptop 7" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Budget Friendly</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Harga terjangkau dengan kualitas terjamin.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="700">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+8" alt="Laptop 8" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">All-Purpose</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Serba guna untuk kerja dan hiburan.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="800">
+                        <a href="laptop.html">
+                            <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-[0_10px_20px_rgba(219,184,104,0.5)] transition-all duration-300 hover:scale-105">
+                                <img src="https://via.placeholder.com/600x400/111827/DBB868?text=Laptop+9" alt="Laptop 9" class="w-full h-64 object-cover swiper-lazy">
+                                <div class="carousel-overlay absolute inset-0 bg-gold opacity-0 transition-opacity duration-300"></div>
+                                <div class="absolute bottom-0 left-0 right-0 bg-gray-900 bg-opacity-75 p-6">
+                                    <h3 class="text-xl font-bold text-white">Laptop <span class="text-gold">Pro Edition</span></h3>
+                                    <p class="text-gray-400 text-sm mt-2">Didesain untuk profesional dengan kebutuhan tinggi.</p>
+                                    <button class="mt-4 px-4 py-2 bg-gold text-gray-900 rounded-md text-sm font-medium hover:bg-yellow-600 transition">Lihat Detail</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-6"></div>
+                <!-- Navigation arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </div>
@@ -236,7 +411,6 @@
                             <div class="mt-4 space-y-4">
                                 <a href="about.html" class="text-base text-gray-500 hover:text-yellow-500">Tentang Kami</a>
                                 <a href="service.html" class="text-base text-gray-500 hover:text-yellow-500 block mt-2">Layanan Kami</a>
-
                             </div>
                         </div>
                     </div>
@@ -261,12 +435,16 @@
 
     <!-- Sticky Contact Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/6282245535020" class="flex items-center justify-center w-14 h-14 rounded-full bg-gold text-white shadow-lg hover:bg-gold transition duration-500 transform hover:scale-110">
-            <i data-feather="message-circle" class="w-6 h-6"></i>
-        </a>
+    <a href="https://wa.me/6282245535020" 
+        class="flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.149-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        </svg>
+    </a>
     </div>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
         // Initialize Vanta.js background
         VANTA.NET({
@@ -301,16 +479,25 @@
         // Initialize feather icons
         feather.replace();
 
-        // Testimonial slider
+        // Initialize Carousel Swiper
         document.addEventListener('DOMContentLoaded', function() {
-            const swiper = new Swiper('.swiper-container', {
+            const carouselSwiper = new Swiper('.carousel-swiper', {
                 loop: true,
+                effect: 'slide',
                 autoplay: {
-                    delay: 5000,
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                lazy: {
+                    loadPrevNext: true,
                 },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
                 },
                 breakpoints: {
                     640: {
@@ -329,7 +516,5 @@
             });
         });
     </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </body>
 </html>
